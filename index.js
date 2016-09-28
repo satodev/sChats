@@ -1,11 +1,11 @@
 //imports
-let express = require("express");
-let app = require("express")();
-let server = require("http").Server(app);
-let io = require("socket.io")(server);
-let bodyParser = require("body-parser");
-let router = require("./server/route.js");
-let utls = require("./server/utls.js");
+var express = require("express");
+var app = require("express")();
+var server = require("http").Server(app);
+var io = require("socket.io")(server);
+var bodyParser = require("body-parser");
+var router = require("./server/route.js");
+var utls = require("./server/utls.js");
 //set && use
 app.set("views", "./client");
 app.set("view engine", "pug");
@@ -17,9 +17,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(router);
 
 //system
-let array_user = [];
-let array_pseudo = [];
-let typing_user = [];
+var array_user = [];
+var array_pseudo = [];
+var typing_user = [];
 io.on("connection", (socket)=>{
 	console.log("connection");
 	io.emit("annoucements", {message : "A new user has joinded!"});
