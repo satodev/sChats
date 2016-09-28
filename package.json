@@ -10,7 +10,7 @@
     "pug": "^2.0.0-beta3",
     "bootstrap" : "^3.3.7",
     "mongoose" : "^3.6.1",
-    "socketio" : "^1.4.8"
+    "socketio" : "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
