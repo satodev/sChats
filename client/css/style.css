@@ -135,11 +135,36 @@ body{
 
 /* Media Queries */
 @media (min-width: 0px) and (max-width : 768px){
+	body{
+		padding-bottom: 0px;	
+	}
+	#message{
+		height: calc(100% - 47px);
+	}
+	#typing {
+		margin: 0;
+	}
+	#sender input[type="text"]{
+		width : 80%;
+		float: left;
+	}
+	#sender input[type="submit"]{
+		width: 20%;
+	}
+	.user_cont h3{
+		padding: 0;
+		margin: 0;
+		font-size: 12px;
+	}
 	.user_cont{
-		height: 50%;
+		display:none;
+		height: 25%;
 		overflow-y : scroll;
 	}
 	.chat_cont{
-		height: 50%;
+		height: 100%;
+	}
+	#bottomNavbar{
+		display: none;
 	}
 }
