@@ -8,7 +8,7 @@ utls = {
 		}
 		return isThere;
 	},
-	devareTypingUse : (obj, key)=>{
+	deleteTypingUse : (obj, key)=>{
 		for(var i = 0; i< obj.length; i++){
 			if(obj[i].mail == key){
 				obj.splice(i, 1);
