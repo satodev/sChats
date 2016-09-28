@@ -6,6 +6,7 @@ var io = require("socket.io")(server);
 var bodyParser = require("body-parser");
 var router = require("./server/route.js");
 var utls = require("./server/utls.js");
+var port = process.env.PORT || 8080
 //set && use
 app.set("views", "./client");
 app.set("view engine", "pug");
@@ -64,6 +65,6 @@ io.on("connection", (socket)=>{
 		io.emit("disconnection", {for : "everyone", message : "disconnected"});
 	});
 });
-server.listen(8080, ()=>{
+server.listen(port, ()=>{
 	console.log("Server launched on 8080");
 });
