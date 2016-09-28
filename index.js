@@ -37,7 +37,7 @@ io.on("connection", (socket)=>{
 	});
 	socket.on("userAway", (c)=>{
 		if(array_user.indexOf(c[0]) != -1){
-			let index = array_user.indexOf(c[0]);
+			var index = array_user.indexOf(c[0]);
 			io.emit("userGone", {for:"everyone", message : { id : index}});
 			array_user.splice(index, 1);
 			array_pseudo.splice(index,  1);
