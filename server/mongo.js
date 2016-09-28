@@ -1,8 +1,8 @@
-let mg = require("mongoose");
-let u = "sato";
-let m = "sato4591";
-let assert = require("assert");
-let mo = {
+var mg = require("mongoose");
+var u = "sato";
+var m = "sato4591";
+var assert = require("assert");
+var mo = {
 	schema : "",
 	model : "",
 	cuser :  "",

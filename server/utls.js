@@ -1,6 +1,6 @@
 utls = {
 	userInTypingObj: (obj, key)=>{
-		let isThere = false;
+		var isThere = false;
 		for(var i = 0; i < obj.length; i++){
 			if(obj[i].mail == key){
 				isThere = true;	
@@ -8,7 +8,7 @@ utls = {
 		}
 		return isThere;
 	},
-	deleteTypingUse : (obj, key)=>{
+	devareTypingUse : (obj, key)=>{
 		for(var i = 0; i< obj.length; i++){
 			if(obj[i].mail == key){
 				obj.splice(i, 1);
