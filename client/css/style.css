@@ -1,8 +1,9 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+	display: none !important;
 }
 body{
 	padding-bottom: 40px;
+	background-color: #fefefe;
 }
 /* Main */
 #mainNavbar.navbar{
@@ -32,9 +33,47 @@ body{
 #home{
 	text-align: center;
 }
+#home .jumbotron{
+	background-color: #fefefe;
+	color: #3366ff;
+}
+#home .btn-primary{
+	color: #fff;
+	background-color: #3366ff;
+	border-color: #3366ff;
+}
+#home .page-header{
+	background-color: #3366ff;
+	color: white;
+	line-height: 36px;
+}
+#home .page-header h1{
+	padding-top : 15px
+}
+#home .thumbnail {
+	border-color: #3366ff;
+}
+#home .thumbnail .caption h2{
+	margin-top :0px;
+}
 .center{
 	text-align: center;
 }
+#bottomNavbar {
+	background-color: #fefefe;
+	border-color: #3366ff;
+}
+#bottomNavbar .navbar-text{
+	color: #3366ff;
+}
+#bottomNavbar .navbar-text a{
+	color: #3366ff;
+	text-decoration: underline;
+}
+#bottomNavbar .navbar-text a:hover{
+	color: black;
+	text-decoration: none;
+}	
 /* Chat */
 #chatContainer{
 	margin-top: 10px;
@@ -61,10 +100,10 @@ body{
 	border-bottom: 1px solid #eee;
 }
 .user_id{
-		
+
 }
 .user_id:nth-child(odd){
-	
+
 }
 .user_id:nth-child(even){
 	background-color:#eee;
@@ -92,4 +131,15 @@ body{
 	padding : 0;
 	margin: 0;
 	word-wrap: break-word;
+}
+
+/* Media Queries */
+@media (min-width: 0px) and (max-width : 768px){
+	.user_cont{
+		height: 50%;
+		overflow-y : scroll;
+	}
+	.chat_cont{
+		height: 50%;
+	}
 }

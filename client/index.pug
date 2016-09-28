@@ -8,7 +8,7 @@ html(lang="en", ng-app="sChat", ng-cloak)
 		link(rel="stylesheet", href="css/style.css")
 body(ng-controller="mainCont")
 	nav.navbar.navbar-default#mainNavbar
-		.container-fluid
+		.container
 			.navbar-header
 				button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
 					span.sr-only Toggle navigation
@@ -48,7 +48,7 @@ body(ng-controller="mainCont")
 					| 
 					button.btn.btn-primary(type='button', ng-if='pwd == verifpwd', ng-click='authProcess(mail, pseudo, pwd)') Register
 					|  
-					button.btn.btn-default(type='button', data-dismiss='modal') Close
+					button.btn.btn-default(id="closeSubscribe" type='button', data-dismiss='modal') Close
 	#loginModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel2')
 		.modal-dialog(role='document')
 			.modal-content
@@ -66,12 +66,12 @@ body(ng-controller="mainCont")
 					| 
 					button.btn.btn-primary(type='button', ng-click='loginProcess(lmail, luser, lpwd)') Login
 					|  
-					button.btn.btn-default(type='button', data-dismiss='modal') Close
+					button.btn.btn-default(id="closeLogin" type='button', data-dismiss='modal') Close
 			input(ng-if="unknown" type='submit', ng-click='getAllUser()')
 				
 	div(ng-view)
 	nav.navbar.navbar-default.navbar-fixed-bottom#bottomNavbar
-		.container-fluid
+		.container
 				ul.nav.navbar-nav.navbar-right
 					p.navbar-text Website made by : 
 						a(href="satoru.fr") Satoru HEMMI	

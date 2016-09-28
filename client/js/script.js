@@ -16,10 +16,12 @@ app.controller("mainCont", ["$scope", "$http", "$location", "authFactory", "chat
 		}
 	}
 	$scope.disconnect = ()=>{
-		chatService.close();
-		$scope.login_info = "";
-		sStore.clear();
-		$location.path("#!/");
+		if(confirm("Are you sure ?")){
+			chatService.close();
+			$scope.login_info = "";
+			sStore.clear();
+			$location.path("#!/");
+		}
 	}
 	$scope.getAllUser = function(){
 		$scope.loading = "loading";
@@ -45,6 +47,7 @@ app.controller("mainCont", ["$scope", "$http", "$location", "authFactory", "chat
 					sStore.add("user_email", email);
 					sStore.add("user_name", user);
 					//chatService.connect();
+					document.getElementById("closeLogin").click();
 				}else{
 					$scope.login_error = "problem while login";
 				}
@@ -71,6 +74,7 @@ app.controller("mainCont", ["$scope", "$http", "$location", "authFactory", "chat
 							console.log(response);
 							if(response){
 								$scope.auth_error = "User registered";
+								document.getElementById("closeSubscribe").click();
 							}else{
 								$scope.auth_error = "Problem  : couldn't register";
 							}
