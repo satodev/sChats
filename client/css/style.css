@@ -1,0 +1,95 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+body{
+	padding-bottom: 40px;
+}
+/* Main */
+#mainNavbar.navbar{
+	margin-bottom: 0px;
+	background-color : #3366ff;
+	border :0;
+	border-radius: 0;
+}
+#mainNavbar .navbar-brand{
+	color: white;
+}
+#mainNavbar .navbar-brand:hover{
+	color: #333;
+}
+#mainNavbar .navbar-toggle .icon-bar{
+	background-color: white;
+}
+#mainNavbar .navbar-toggle:focus,  #mainNavbar .navbar-toggle:hover{
+	background-color: #333;
+}
+#mainNavbar .navbar-text{
+	color: white;
+}
+.navbar-default .navbar-nav>li>a{
+	color:white;
+}
+#home{
+	text-align: center;
+}
+.center{
+	text-align: center;
+}
+/* Chat */
+#chatContainer{
+	margin-top: 10px;
+	height: calc(100% - 80px);
+}
+.user_connected{
+	width: 100%;
+	text-align: center;
+	word-wrap:break-word;
+}
+.user_cont{
+	padding:0;
+	height: 100%;
+	border-left : 1px solid #eee;
+	border-top : 1px solid #eee;
+	border-right : 1px solid #eee;
+	border-radius : 5px;
+}
+.user_cont h3{
+	margin: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align:center;
+	border-bottom: 1px solid #eee;
+}
+.user_id{
+		
+}
+.user_id:nth-child(odd){
+	
+}
+.user_id:nth-child(even){
+	background-color:#eee;
+}
+.chat_cont{
+	height: 100%;
+}
+.user_cont, .chat_cont{
+}
+#message{
+	width: 100%;
+	height: calc(100% - 100px);
+	border-top : 1px solid #eee;
+	border-bottom : 1px solid #eee;
+	overflow-y : scroll;
+}
+#sender input[type="text"]{
+	width: 100%;
+}
+#sender input[type="submit"]{
+	width: 100%;
+}
+.chatmsg{
+	width: 100%;
+	padding : 0;
+	margin: 0;
+	word-wrap: break-word;
+}

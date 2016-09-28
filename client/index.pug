@@ -1,0 +1,88 @@
+html(lang="en", ng-app="sChat", ng-cloak)
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport" ,content="width=device-width, initial-scale=1")
+		title sChat 
+		link(href="/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
+		link(rel="stylesheet", href="css/style.css")
+body(ng-controller="mainCont")
+	nav.navbar.navbar-default#mainNavbar
+		.container-fluid
+			.navbar-header
+				button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(href='#!/') sChat
+			#bs-example-navbar-collapse-1.collapse.navbar-collapse
+				ul.nav.navbar-nav
+					li 
+						a(href="#!/", data-toggle='modal', data-target='#subscribeModal') Subscribe
+					li 
+						a(href="#!/", data-toggle='modal', data-target='#loginModal') Login
+					li(ng-if="login_info") 
+						a(href="#!/chat") Chat
+				ul.nav.navbar-nav.navbar-right
+					p.navbar-text#loading {{loading}}
+					p.navbar-text#login_info(ng-if="login_info")
+						span Logged as : {{login_info[1]}}
+					li 
+						a(href="#!/", ng-if="login_info", ng-click="disconnect()") Disconnect
+	#subscribeModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel1')
+		.modal-dialog(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') &times;
+					h4#myModalLabel1.modal-title Subscribe
+				.modal-body  
+					div.form-group
+						input.form-control(type='mail', placeholder='Email', ng-model='mail')
+						input.form-control(type='text', placeholder='Pseudo', ng-model='pseudo')
+						input.form-control(type='password', placeholder='Password', ng-model='pwd')
+						input.form-control(type='password', placeholder='Password again', ng-model='verifpwd')
+				.modal-footer
+					span#auth_error {{auth_error}}
+					| 
+					button.btn.btn-primary(type='button', ng-if='pwd == verifpwd', ng-click='authProcess(mail, pseudo, pwd)') Register
+					|  
+					button.btn.btn-default(type='button', data-dismiss='modal') Close
+	#loginModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel2')
+		.modal-dialog(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') &times;
+					h4#myModalLabel2.modal-title Login
+				.modal-body  
+					div.form-group
+						input.form-control(type='text', placeholder='Email', ,='', ng-model='lmail')
+						input.form-control(type='text', placeholder='Username', ng-model='luser')
+						input.form-control(type='password', placeholder='Password', ng-model='lpwd')
+				.modal-footer
+					span#login_error {{login_error}}
+					| 
+					button.btn.btn-primary(type='button', ng-click='loginProcess(lmail, luser, lpwd)') Login
+					|  
+					button.btn.btn-default(type='button', data-dismiss='modal') Close
+			input(ng-if="unknown" type='submit', ng-click='getAllUser()')
+				
+	div(ng-view)
+	nav.navbar.navbar-default.navbar-fixed-bottom#bottomNavbar
+		.container-fluid
+				ul.nav.navbar-nav.navbar-right
+					p.navbar-text Website made by : 
+						a(href="satoru.fr") Satoru HEMMI	
+	script(src="/angular/angular.min.js")
+	script(src="/angular-route/angular-route.min.js")
+	script(src="/socket.io-client/socket.io.js")
+	script(src="js/script.js")
+	script(src="js/chatCont.js")
+	script(src="js/chatService.js")
+	script(src="js/ng-view.js")
+	script(src="js/ng-config.js")
+	script(src="js/authFactory.js")
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+	script(src="/bootstrap/dist/js/bootstrap.min.js")
